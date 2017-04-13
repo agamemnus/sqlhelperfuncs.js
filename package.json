@@ -1,0 +1,10 @@
+{
+ "name": "sqlhelperfuncs",
+ "version" : "0.0.1",
+ "description": "SQL helper funcs.",
+ "main": "sqlhelperfuncs.js",
+ "dependencies": {},
+ "homepage": "https://github.com/agamemnus/sqlhelperfuncs.js",
+ "license": "MIT",
+ "repository": {"type": "git", "url": "git+https://github.com/agamemnus/sqlhelperfuncs.js.git"}
+}
