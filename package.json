@@ -3,7 +3,7 @@
  "version" : "0.0.1",
  "description": "SQL helper funcs.",
  "main": "sqlhelperfuncs.js",
- "dependencies": {},
+ "dependencies": {"mysql": "^2.13.0"}
  "homepage": "https://github.com/agamemnus/sqlhelperfuncs.js",
  "license": "MIT",
  "repository": {"type": "git", "url": "git+https://github.com/agamemnus/sqlhelperfuncs.js.git"}
