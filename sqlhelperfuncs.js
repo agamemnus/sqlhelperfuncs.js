@@ -37,6 +37,7 @@ sql.begin  = function () {mysqlBeginCounter += 1; if (mysqlBeginCounter == 1) re
 sql.commit = function () {mysqlBeginCounter -= 1; if (mysqlBeginCounter == 0) return sql.query("COMMIT")}
 
 sql.query = function (queryString) {
+ if (queryString instanceof Array) queryString = queryString.join(" ")
  return new Promise(function(resolve, reject) {
   try {
    result = connection.query(queryString, function (error, results, fields) {resolve({error: error, results: results, fields: fields})})
