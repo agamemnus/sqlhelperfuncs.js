@@ -37,13 +37,13 @@ sql.begin  = function () {mysqlBeginCounter += 1; if (mysqlBeginCounter == 1) re
 sql.commit = function () {mysqlBeginCounter -= 1; if (mysqlBeginCounter == 0) return sql.query("COMMIT")}
 
 sql.query = function (queryString) {
- try {
-  var result = connection.query(queryString, sync.defers())
-  return result[0]
- } catch (err) {
-   console.log ("{\"error\": true, \"errormessage\": \"Error: " + err.code + "\"}")
-   process.exit ()
- }
+ return new Promise(function(resolve, reject) {
+  try {
+   result = connection.query(queryString, function (error, results, fields) {resolve({error: error, results: results, fields: fields})})
+  } catch (err) {
+   reject({error: true, code: err.code})
+  }
+ })
 }
 
 // Get unique rows for a certain group id based on some operation.
