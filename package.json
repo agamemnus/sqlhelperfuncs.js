@@ -6,5 +6,5 @@
  "dependencies": {"mysql": "^2.13.0"},
  "homepage": "https://github.com/agamemnus/sqlhelperfuncs.js",
  "license": "MIT",
- "repository": {"type": "git", "url": "git://github.com/agamemnus/sqlhelperfuncs.js.git#2.0"}
+ "repository": {"type": "git", "url": "http://github.com/agamemnus/sqlhelperfuncs.js.git"}
 }
