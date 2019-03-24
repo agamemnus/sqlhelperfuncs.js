@@ -1,4 +1,4 @@
-// SQL Helper funcs .03.
+// SQL Helper funcs 3.0.
 
 const mysql = require('mysql')
 const sql   = {mysql: mysql, escape: mysql.escape, escapeId: mysql.escapeId}
