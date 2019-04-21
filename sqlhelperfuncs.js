@@ -13,7 +13,7 @@ sql.connect = function (newDbhost, newDbuser, newDbpass) {
  return sql.connectAdvanced(newDbhost, newDbuser, newDbpass)
 }
 sql.connectBasic = function (options) {
- sql.link = connection = mysql.createConnection({host: options.host, user: options.user, password: options.password, database: options.database})
+ sql.link = connection = mysql.createConnection({host: options.host, user: options.user, password: options.password, database: options.database, connectTimeout: 30000})
  connection.on('error', collectErrorMessages)
  connection.connect()
  return connection
