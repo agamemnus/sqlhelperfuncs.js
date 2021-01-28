@@ -6,7 +6,6 @@ module.exports = sql
 
 // Sql connection reference.
 let connection = sql.link = undefined
-sql.errorCode = ''
 sql.connectAsync = function (options) {
  return new Promise(function(resolve, reject) {
   sql.link = connection = mysql.createConnection({host: options.host, user: options.user, password: options.password, database: options.database, connectTimeout: 30000})
@@ -16,8 +15,6 @@ sql.connectAsync = function (options) {
   })
  })
 }
-
-sql.error = function () {return sql.errorCode}
 
 let mysqlBeginCounter = 0
 sql.begin  = function () {mysqlBeginCounter += 1; if (mysqlBeginCounter == 1) return sql.query("BEGIN")}
